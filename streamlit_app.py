@@ -235,11 +235,10 @@ def render_catalog(client: Any) -> None:
                 "Description",
                 width="large",
             ),
-            "operation": st.column_config.SelectboxColumn(
+            "operation": st.column_config.MultiselectColumn(
                 "Operation",
-                options=OPERATIONS,
-                required=False,
-                width="medium",
+                options=["Read", "Write", "Modify"],
+                accept_new_options=False,
             ),
             "resource_type": st.column_config.SelectboxColumn(
                 "Resource Type",
