@@ -73,7 +73,7 @@ streamlit run streamlit_app.py
 4. 검증 미리보기 확인
 5. `생성/갱신` 클릭
 
-새 도구의 Output keys는 Output Schema 최상위 `properties` 이름을 쉼표로 연결해 자동 생성하며 사람이 수정할 수 있다. 기존 서버를 같은 이름으로 다시 올리면 Description, Input Schema, Output Schema는 최신 파일로 갱신하고 Operation, Resource Type, Public Injection Point, 사람이 수정한 Output keys는 그대로 유지한다. 파일에 사라진 기존 도구는 자동 삭제하지 않는다.
+새 도구의 Output keys는 빈 텍스트로 생성하며 사람이 수정할 수 있다. 기존 서버를 같은 이름으로 다시 올리면 Description, Input Schema, Output Schema는 최신 파일로 갱신하고 Operation, Resource Type, Public Injection Point, 사람이 수정한 Output keys는 그대로 유지한다. 파일에 사라진 기존 도구는 자동 삭제하지 않는다.
 
 ## 4. Streamlit Community Cloud 배포
 

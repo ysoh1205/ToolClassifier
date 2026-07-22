@@ -28,17 +28,6 @@ class ImportResult:
     total_count: int
 
 
-def extract_output_keys(output_schema: Any) -> str:
-    """Return comma-separated top-level JSON Schema property names."""
-
-    if not isinstance(output_schema, Mapping):
-        return ""
-    properties = output_schema.get("properties")
-    if not isinstance(properties, Mapping):
-        return ""
-    return ", ".join(str(key) for key in properties)
-
-
 def _load_uploaded_json(payload: bytes, *, label: str) -> Any:
     if not payload:
         raise CatalogError(f"{label} is empty.")
@@ -93,7 +82,7 @@ def parse_catalog_upload(
             "description": tool.description,
             "input_schema": tool.input_schema,
             "output_schema": tool.output_schema,
-            "output_keys": extract_output_keys(tool.output_schema),
+            "output_keys": "",
         }
         for tool in tools
     )
